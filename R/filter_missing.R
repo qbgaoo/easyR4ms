@@ -1,12 +1,13 @@
-filter_missing <- function(formula, data){
+filter_missing <- function(conn, data){
   df <- data
-  x <- all.vars(formula[[2]])
-  id <- all.vars(formula[[3]])
+  x <- all.vars(conn[[2]])
+  id <- all.vars(conn[[3]])
 
-  miss_vl <- df[is.na(df[[x]]),]
+  df <- df[is.na(df[[x]]),]
+  miss_vl <- cbind(df[id], df[x])
 
-  if (n > 0) {
-    return(tibble(miss_vl))
+  if (nrow(miss_vl) > 0) {
+    return(miss_vl)
   } else {
     return(print("No missing value found"))
   }
