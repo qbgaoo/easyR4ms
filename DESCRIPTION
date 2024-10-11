@@ -1,11 +1,20 @@
-Package: easy4Rms
+Package: easyR4ms
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Make R for Medical Statistics Easier to Use
 Version: 0.1.0
-Author: Who wrote it
+Author: Frank Gao
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.2
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    flextable,
+    officer,
+    purrr,
+    tibble
